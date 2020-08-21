@@ -1,36 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 import Header from './components/Header';
 import CurrentQuestion from './components/CurrentQuestion';
 import DescriptionOfBird from './components/DescriptionOfBird';
 import PossibleAnswer from './components/PossibleAnswer';
 import birdsData from './birdsData';
+import useInit from './hooks/useInit';
+import { initAppAction, answersAction } from './redux/actions';
 import './App.scss';
+import { useSelector, useDispatch } from 'react-redux';
 
-
+import { currentPageNumberSelector, currentBirdIndexSelector, currentBirdSelector } from './redux/selectors';
 
 function App() {
 
-  const [currentNumberPage, setCurrentNumberPage] = useState(0)
-  const currentPage = birdsData[currentNumberPage];
-  const currentBird = currentPage[Math.floor(Math.random() * 6)];
+  useInit(initAppAction);
+  // const dispatch = useDispatch();
 
-
-  const listBirds = currentPage.map(el => {
-    return <PossibleAnswer name={el.name} key={el.id}/>
-  })
+  const currentPageNumber = useSelector(currentPageNumberSelector);
+  // const currentBirdIndex = useSelector(currentBirdIndexSelector);
+  const currentPage = birdsData[currentPageNumber];
+  // const currentBird = useSelector(currentBirdSelector);
 
   return (
     <div className="App">
       <Header />
-      <CurrentQuestion currentBird={currentBird}/>
+      <CurrentQuestion />
       <div className='main'>
-        <div className = 'answerOptions'>
-          {listBirds}
+        <div className = 'col'>
+          { currentPage.map((el, index) => {
+            return <PossibleAnswer
+              name={el.name}
+              index={index}
+              key={el.id} 
+            />
+          })}
         </div>
-        <DescriptionOfBird currentBird={currentBird}/>
+        <div className='col'>
+        <DescriptionOfBird/>
+        </div>
       </div>
-    </div>
+    </div> 
   );
 }
 

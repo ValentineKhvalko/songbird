@@ -2,21 +2,24 @@ import React from 'react'
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss'
 
-
-import defaultImage from '../../assets/img/kisspng-caregiver-logo-songbird-clip-art-caregiver-pictures-5ab26536c28d78.4179000015216407587969.jpg';
 import './style.scss'
+import defaultImage from '../../assets/img/4013313a-2c26-49ba-8e70-ff5cdb2bb295.jpg'
+import { useSelector } from 'react-redux';
+import { currentBirdSelector, isCorrectAnswerSelector } from '../../redux/selectors';
 
+export default function CurrentQuestion() {
+  const bird = useSelector(currentBirdSelector);
+  const isCorrectAnswer = useSelector(isCorrectAnswerSelector);
 
-export default function CurrentQuestion(props) {
+  const image = isCorrectAnswer ? bird.image : defaultImage;
+  const birdName = isCorrectAnswer ? bird.name : '********';
 
-  const bird = props.currentBird;
-  
   return (
     <div className='currentQuestion'>
-      <img src = {bird.image || defaultImage } className='currentImg' alt= {bird.name}></img>
+      <img src={image} className='currentImg' alt={birdName}></img>
       <div className='currentQuestionDescription'> 
-        <p>{bird.name}</p>
-        <AudioPlayer className='player' src= { bird.audio}/>
+        <p>{birdName}</p>
+        <AudioPlayer className='player' src={bird.audio}/>
       </div>
     </div>
   )

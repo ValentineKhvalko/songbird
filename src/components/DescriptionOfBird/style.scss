@@ -1,26 +1,27 @@
 .description { 
-  border: 2px solid #000;
-  border-radius: 10px;
+  display: flex;
+  border: 1px solid rgb(71, 70, 70);
+  border-radius: 0.25rem;
+  background-color: #303030;
+  height: 100%;
+  color: #fff;
 
   .shotDescription {
     display: flex;
     padding: 10px 20px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid rgb(71, 70, 70);
 
     .descriptionImg {
       margin: 0 20px 0 0;
       width: 100px;
       height: 100px;
-      border: 2px solid #000;
+      border: 2px solid rgb(71, 70, 70);
       border-radius: 5px;
+      background-size: cover;
     }
 
     .species {
       width: 100%;
-
-      p {
-        padding-bottom: 15px;
-      }
 
       .player {
         border-radius: 10px;
@@ -29,6 +30,10 @@
         background-color: rgb(219, 230, 235);
       }
     }
+  }
+
+  p {
+    padding: .5rem;
   }
 
   .fullDescription {
