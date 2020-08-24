@@ -5,14 +5,15 @@ import 'react-h5-audio-player/src/styles.scss'
 import './style.scss'
 import defaultImage from '../../assets/img/4013313a-2c26-49ba-8e70-ff5cdb2bb295.jpg'
 import { useSelector } from 'react-redux';
-import { currentBirdSelector, isCorrectAnswerSelector } from '../../redux/selectors';
+import { currentBirdSelector, currentPageAnswersSelector, currentBirdIndexSelector } from '../../redux/selectors';
 
 export default function CurrentQuestion() {
   const bird = useSelector(currentBirdSelector);
-  const isCorrectAnswer = useSelector(isCorrectAnswerSelector);
+  const birdIndex = useSelector(currentBirdIndexSelector);
+  const currentAnswers = useSelector(currentPageAnswersSelector);
 
-  const image = isCorrectAnswer ? bird.image : defaultImage;
-  const birdName = isCorrectAnswer ? bird.name : '********';
+  const image = currentAnswers.includes(birdIndex) ? bird.image : defaultImage;
+  const birdName = currentAnswers.includes(birdIndex) ? bird.name : '********';
 
   return (
     <div className='currentQuestion'>

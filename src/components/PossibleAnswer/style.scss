@@ -3,6 +3,7 @@
   background-color: #303030;
   border-bottom: 1px solid #555;
   cursor: pointer;
+  user-select: none;
 
   p {
     padding: 1rem;
@@ -10,6 +11,10 @@
 
   p:last-child{
     border-bottom: none;
+  }
+
+  &:hover {
+    background-color: #474747;
   }
 }
 

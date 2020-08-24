@@ -7,7 +7,6 @@ import { choosedBirdSelector } from '../../redux/selectors';
 import './style.scss'
 
 export default function DescriptionOfBird() {
-
   const bird = useSelector(choosedBirdSelector);
 
   return(

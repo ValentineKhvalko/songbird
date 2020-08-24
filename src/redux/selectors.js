@@ -6,12 +6,18 @@ export const currentPageNumberSelector = state => state.pageNumber;
 
 export const currentBirdIndexSelector = state => state.birdIndex;
 
-export const isCorrectAnswerSelector = state => state.isCorrectAnswer;
+export const givenAnswersSelector = state => state.givenAnswers;
 
 export const choosedBirdSelector = state => state.choosedBird;
 
 export const currentBirdSelector = createSelector(
   [currentPageNumberSelector, currentBirdIndexSelector], (pageNumber, birdIndex) => {
     return birdsData[pageNumber][birdIndex];
+  }
+)
+
+export const currentPageAnswersSelector = createSelector(
+  [givenAnswersSelector, currentPageNumberSelector], (answers, pageNumber) => {
+    return answers[pageNumber] || [];
   }
 )

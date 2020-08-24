@@ -1,0 +1,14 @@
+.nextPageButton {
+  margin-top: 20px;
+  padding: 1rem;
+  border: 1px solid #555;
+  border-radius: .25rem;
+  text-align: center; 
+  cursor: pointer;
+  background-color: #303030;
+  user-select: none;
+
+  &:hover {
+    background-color: #474747;
+  }
+}

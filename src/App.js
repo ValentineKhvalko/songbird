@@ -1,26 +1,25 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 
 import Header from './components/Header';
 import CurrentQuestion from './components/CurrentQuestion';
 import DescriptionOfBird from './components/DescriptionOfBird';
 import PossibleAnswer from './components/PossibleAnswer';
-import birdsData from './birdsData';
-import useInit from './hooks/useInit';
-import { initAppAction, answersAction } from './redux/actions';
-import './App.scss';
-import { useSelector, useDispatch } from 'react-redux';
+import NextPageButton from './components/NextPageButton'; 
 
-import { currentPageNumberSelector, currentBirdIndexSelector, currentBirdSelector } from './redux/selectors';
+import birdsData from './birdsData';
+
+import useInit from './hooks/useInit';
+import { initAppAction } from './redux/actions';
+import { useSelector } from 'react-redux';
+import { currentPageNumberSelector } from './redux/selectors';
+
+import './App.scss';
 
 function App() {
-
   useInit(initAppAction);
-  // const dispatch = useDispatch();
 
   const currentPageNumber = useSelector(currentPageNumberSelector);
-  // const currentBirdIndex = useSelector(currentBirdIndexSelector);
   const currentPage = birdsData[currentPageNumber];
-  // const currentBird = useSelector(currentBirdSelector);
 
   return (
     <div className="App">
@@ -40,6 +39,7 @@ function App() {
         <DescriptionOfBird/>
         </div>
       </div>
+      <NextPageButton />
     </div> 
   );
 }

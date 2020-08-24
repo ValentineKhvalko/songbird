@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
-import { isCorrectAnswerReducer } from './answerReducer';
+import { givenAnswersReducer } from './answersReducer';
 import { currentPageNumberReducer } from './currentPageNumberReducer';
 import { currentBirdIndexReducer } from './currentBirdIndexRedicer';
 import { choosedBirdReducer } from './choosedBirdReduser';
  
 export const rootReducer = combineReducers({
-  isCorrectAnswer: isCorrectAnswerReducer,
+  givenAnswers: givenAnswersReducer,
   pageNumber: currentPageNumberReducer,
   birdIndex: currentBirdIndexReducer,
   choosedBird: choosedBirdReducer,

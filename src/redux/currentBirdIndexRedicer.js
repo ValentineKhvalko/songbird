@@ -1,8 +1,10 @@
 import { handleActions } from "redux-actions";
-import { setPageNumberAction } from './actions';
+import { setCurrentBirdIndexAction } from './actions';
 
-const initialBirdIndex = Math.floor(Math.random() * 6);
+import {randomNumberToSix} from '../units';
+
+const initialRandomBirdIndex = randomNumberToSix();
 
 export const currentBirdIndexReducer =  handleActions ({
-  [setPageNumberAction]: (state, action) => action.payload
-}, initialBirdIndex)
+  [setCurrentBirdIndexAction]: (state, action) => action.payload
+}, initialRandomBirdIndex)
