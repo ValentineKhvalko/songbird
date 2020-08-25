@@ -1,13 +1,12 @@
 .possibleAnswer {
+  display: flex;
+  align-items: center;
   color: #fff;
   background-color: #303030;
   border-bottom: 1px solid #555;
   cursor: pointer;
   user-select: none;
-
-  p {
-    padding: 1rem;
-  } 
+  padding: 1rem;
 
   p:last-child{
     border-bottom: none;
@@ -26,4 +25,5 @@
 .possibleAnswer:last-child {
   border-bottom-left-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
+  border-bottom:none;
 }

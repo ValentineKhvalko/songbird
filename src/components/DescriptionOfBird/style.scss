@@ -1,6 +1,5 @@
 .description { 
   display: flex;
-  border: 1px solid rgb(71, 70, 70);
   border-radius: 0.25rem;
   background-color: #303030;
   height: 100%;
@@ -11,32 +10,48 @@
     padding: 10px 20px;
     border-bottom: 1px solid rgb(71, 70, 70);
 
-    .descriptionImg {
-      margin: 0 20px 0 0;
-      width: 100px;
-      height: 100px;
-      border: 2px solid rgb(71, 70, 70);
-      border-radius: 5px;
-      background-size: cover;
-    }
-
     .species {
       width: 100%;
 
-      .player {
-        border-radius: 10px;
+      .audioPlayer {
         width: 100%;
-        padding: 10px;
-        background-color: rgb(219, 230, 235);
+        border-radius: .25rem;
+        background-color: #222;
+
+        .rhap_time {
+          color:#dddddd;
+        }
+
+        .rhap_main-controls-button, 
+        .rhap_repeat-button,
+        .rhap_volume-button {
+          color: #008966;
+
+          &:hover {
+            color: #00bc8c;
+          }
+        }
+
+        .rhap_progress-indicator, .rhap_progress-filled {
+          background-color: #008966;
+        }
       }
-    }
+    }      
   }
 
   p {
-    padding: .5rem;
+    font-size: .9rem;
+    line-height: 1.2rem;
+    padding-bottom: .5rem;
   }
 
   .fullDescription {
     padding: 10px 20px;
   }
 }  
+
+.rules{
+  p {
+    padding: 15px 0 0 15px;
+  }
+}

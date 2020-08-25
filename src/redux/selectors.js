@@ -10,6 +10,8 @@ export const givenAnswersSelector = state => state.givenAnswers;
 
 export const choosedBirdSelector = state => state.choosedBird;
 
+export const scoreSelector = state => state.score;
+
 export const currentBirdSelector = createSelector(
   [currentPageNumberSelector, currentBirdIndexSelector], (pageNumber, birdIndex) => {
     return birdsData[pageNumber][birdIndex];

@@ -10,3 +10,5 @@ export const choosedBirdAction = createAction('@@SET/CHOOSEDBIRD');
 
 export const setCurrentBirdIndexAction = createAction('@@SET/BIRDINDEX');
 
+export const setScoreAction = createAction('@@SET/SCORE');
+

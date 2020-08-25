@@ -6,6 +6,7 @@ body {
 .App {
   max-width: 1120px;
   margin: 0 auto;
+  font-family: Noto Sans, sans-serif;
 
   .main {
     position: relative;
@@ -16,4 +17,20 @@ body {
      flex: 0 0 49%;
     }
   }
+}
+
+.btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #474747;
+  margin-right: 10px;
+}
+
+.error {
+  background-color: rgb(219, 5, 5);
+}
+
+.correct {
+  background-color: #008966;
 }

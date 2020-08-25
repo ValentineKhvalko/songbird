@@ -1,7 +1,6 @@
 .nextPageButton {
   margin-top: 20px;
   padding: 1rem;
-  border: 1px solid #555;
   border-radius: .25rem;
   text-align: center; 
   cursor: pointer;
@@ -10,5 +9,13 @@
 
   &:hover {
     background-color: #474747;
+  }
+}
+
+.readyToNextPage {
+  background-color: #008966;
+
+  &:hover {
+    background-color: #00bc8c;
   }
 }

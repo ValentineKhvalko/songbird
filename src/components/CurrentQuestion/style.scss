@@ -1,35 +1,43 @@
 .currentQuestion {
   margin: 20px 0;
   padding: 20px;
-  border: 1px solid #555;
   background-color: #303030;
   border-radius: .25rem;
   display: flex;
 
-  .currentImg {
-    margin: 0 20px 0 0;
-    width: 150px;
-    height: 150px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    background-color: rgb(219, 230, 235);
-    background-size: cover;
-  }
-
   .currentQuestionDescription {
     width: 100%;
 
+    .audioPlayer {
+      width: 100%;
+      margin-top: 25px;
+      border-radius: .25rem;
+      background-color: #222;
+
+      .rhap_time {
+        color:#dddddd;
+      }
+
+      .rhap_main-controls-button, 
+      .rhap_repeat-button,
+      .rhap_volume-button {
+        color: #008966;
+
+        &:hover {
+          color: #00bc8c;
+        }
+      }
+
+      .rhap_progress-indicator, .rhap_progress-filled {
+        background-color: #008966;
+      }
+    }
+
     p {
+      font-size: 1.5rem ;
       padding: 10px;
       border-bottom: 2px solid #555;
     }
 
-    .player {
-      margin-top: 1.5rem;
-      border-radius: .25rem;
-      width: 100%;
-      padding: .5rem;
-      background-color: rgb(219, 230, 235);
-    }
   }
 }
