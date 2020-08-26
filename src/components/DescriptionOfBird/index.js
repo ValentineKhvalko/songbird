@@ -10,9 +10,9 @@ export default function DescriptionOfBird() {
   const bird = useSelector(choosedBirdSelector);
 
   const descriptionImg = {
-    marginRight: 20,
-    width: 150,
-    height: 100,
+    marginBottom: 10,
+    width: 225,
+    height: 140,
     borderRadius: 5,
     backgroundSize: 'cover',
     backgroundImage: `url(${bird.image})`,

@@ -1,6 +1,5 @@
 import React from 'react'
 import AudioPlayer from 'react-h5-audio-player';
-// import 'react-h5-audio-player/lib/styles.scss';
 import 'react-h5-audio-player/src/styles.scss';
 
 import './style.scss'
@@ -17,9 +16,9 @@ export default function CurrentQuestion() {
   const birdName = currentAnswers.includes(birdIndex) ? bird.name : '********';
 
   const styleImage = {
-    marginRight: 20,
-    width: 200,
-    height: 150,
+    marginBottom: 10,
+    width: 225,
+    height: 140,
     borderRadius: 5,
     backgroundSize: 'cover',
     backgroundImage: `url(${image})`,

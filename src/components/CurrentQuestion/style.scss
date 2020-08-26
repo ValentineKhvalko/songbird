@@ -6,6 +6,7 @@
   display: flex;
 
   .currentQuestionDescription {
+    padding-left: 20px;
     width: 100%;
 
     .audioPlayer {
@@ -38,6 +39,13 @@
       padding: 10px;
       border-bottom: 2px solid #555;
     }
+  }
+}
 
+@media(max-width: 580px) {
+  .currentQuestion {
+    .currentQuestionDescription {
+      padding-left: 0;
+    }
   }
 }

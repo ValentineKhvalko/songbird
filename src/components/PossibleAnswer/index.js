@@ -17,7 +17,8 @@ export default function PossibleAnswer(props) {
   const currentBirdIndex = useSelector(currentBirdIndexSelector);
   const givenAnswers = useSelector(currentPageAnswersSelector);
   const isContainCurrentIndex = givenAnswers.includes(props.index);
-  const correctAnser = props.index === currentBirdIndex;
+  const correctAnswer = props.index === currentBirdIndex;
+  const maxPoints = 5;
 
   const handleClick = () => {
     dispatch(choosedBirdAction(birdsData[currentPageIndex][props.index]));
@@ -26,8 +27,8 @@ export default function PossibleAnswer(props) {
         pageIndex: currentPageIndex,
         birdIndex: props.index
       }))
-      if(correctAnser) {
-        dispatch(setScoreAction(5 - givenAnswers.length))
+      if(correctAnswer) {
+        dispatch(setScoreAction(maxPoints - givenAnswers.length))
         new Audio(correctSound).play();
       } else {
         new Audio(errorSound).play();
@@ -36,8 +37,8 @@ export default function PossibleAnswer(props) {
   }
 
   const btnClass = classNames('btn',{
-    error: isContainCurrentIndex && !correctAnser,
-    correct: isContainCurrentIndex && correctAnser
+    error: isContainCurrentIndex && !correctAnswer,
+    correct: isContainCurrentIndex && correctAnswer
   })
   
   return (

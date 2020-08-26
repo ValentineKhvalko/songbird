@@ -12,6 +12,8 @@ export const choosedBirdSelector = state => state.choosedBird;
 
 export const scoreSelector = state => state.score;
 
+export const endOfGameSelector = state => state.isGameOver;
+
 export const currentBirdSelector = createSelector(
   [currentPageNumberSelector, currentBirdIndexSelector], (pageNumber, birdIndex) => {
     return birdsData[pageNumber][birdIndex];
