@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { useSelector } from 'react-redux';
@@ -8,6 +8,7 @@ import './style.scss'
 
 export default function DescriptionOfBird() {
   const bird = useSelector(choosedBirdSelector);
+  const audioPlayer = createRef();
 
   const descriptionImg = {
     marginBottom: 10,
@@ -28,7 +29,12 @@ export default function DescriptionOfBird() {
           <div className='species'>
             <p>{ bird.name }</p>
             <p>{ bird.species }</p>
-            <AudioPlayer className='audioPlayer' src={bird.audio} autoPlayAfterSrcChange={false}/>
+            <AudioPlayer 
+              className='audioPlayer'
+              src={bird.audio} 
+              autoPlayAfterSrcChange={false}
+              ref={audioPlayer}
+            />
           </div>
         </div> 
         <div className='fullDescription'>

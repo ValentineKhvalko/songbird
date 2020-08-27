@@ -11,7 +11,7 @@
 
     .audioPlayer {
       width: 100%;
-      margin-top: 25px;
+      margin-top: 17px;
       border-radius: .25rem;
       background-color: #222;
 
@@ -36,7 +36,7 @@
 
     p {
       font-size: 1.5rem ;
-      padding: 10px;
+      padding: 0 10px 10px 0; 
       border-bottom: 2px solid #555;
     }
   }
@@ -46,6 +46,10 @@
   .currentQuestion {
     .currentQuestionDescription {
       padding-left: 0;
+
+      p {
+        padding: 15px 0;
+      }
     }
   }
 }
