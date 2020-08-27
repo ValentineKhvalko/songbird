@@ -1,0 +1,55 @@
+.currentQuestion {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #303030;
+  border-radius: .25rem;
+  display: flex;
+
+  .currentQuestionDescription {
+    padding-left: 20px;
+    width: 100%;
+
+    .audioPlayer {
+      width: 100%;
+      margin-top: 17px;
+      border-radius: .25rem;
+      background-color: #222;
+
+      .rhap_time {
+        color:#dddddd;
+      }
+
+      .rhap_main-controls-button, 
+      .rhap_repeat-button,
+      .rhap_volume-button {
+        color: #008966;
+
+        &:hover {
+          color: #00bc8c;
+        }
+      }
+
+      .rhap_progress-indicator, .rhap_progress-filled {
+        background-color: #008966;
+      }
+    }
+
+    p {
+      font-size: 1.5rem ;
+      padding: 0 10px 10px 0; 
+      border-bottom: 2px solid #555;
+    }
+  }
+}
+
+@media(max-width: 580px) {
+  .currentQuestion {
+    .currentQuestionDescription {
+      padding-left: 0;
+
+      p {
+        padding: 15px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+.description { 
+  display: flex;
+  border-radius: 0.25rem;
+  background-color: #303030;
+  height: 100%;
+  color: #fff;
+
+  .shotDescription {
+    display: flex;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgb(71, 70, 70);
+
+    .species {
+      width: 100%;
+      padding-left: 20px;
+
+      p {
+        padding-bottom: 3px;
+      }
+
+      .audioPlayer {
+        width: 100%;
+        border-radius: .25rem;
+        background-color: #222;
+
+        .rhap_time {
+          color:#dddddd;
+        }
+
+        .rhap_main-controls-button, 
+        .rhap_repeat-button,
+        .rhap_volume-button {
+          color: #008966;
+
+          &:hover {
+            color: #00bc8c;
+          }
+        }
+
+        .rhap_progress-indicator, .rhap_progress-filled {
+          background-color: #008966;
+        }
+      }
+    }      
+  }
+
+  p {
+    font-size: .9rem;
+    line-height: 1.5rem;
+  }
+
+  .fullDescription {
+    padding: 10px 20px;
+  }
+}  
+
+.rules{
+  padding: 15px;
+}
+
+@media(max-width: 950px) {
+  .description{
+    .shotDescription {
+      flex-direction: column;
+      align-items: center;
+  
+      .species {
+        padding-left: 0;
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 770px) {
+  .shotDescription {
+    flex-direction: row;
+  }
+}
+
+@media(max-width: 580px) {
+  .description{
+    .shotDescription {
+      flex-direction: column;
+      align-items: center;
+  
+      .species {
+        padding-left: 0;
+      }
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}

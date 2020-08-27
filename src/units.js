@@ -1,0 +1,1 @@
+export const randomNumberToSix = () => Math.floor(Math.random() * 6);

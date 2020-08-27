@@ -1,0 +1,38 @@
+.endOfGame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Noto Sans, sans-serif;
+
+  .modalWindow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    background-color: rgb(243, 243, 243);
+    border-radius: .25rem;
+    padding: 40px 40px 30px;
+    
+    p {
+      font-size: 1.3rem;
+      color: #222;
+      text-align: center;
+      padding: 0 0 10px;
+    }
+
+    .toStartPageBtn {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #008966;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: .25rem;
+
+      &:hover {
+        background-color: #00bc8c;
+      }
+    }
+  }
+}
